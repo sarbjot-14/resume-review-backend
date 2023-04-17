@@ -1,3 +1,4 @@
+using System.Diagnostics;
 
 using Application.Resumes;
 using Domain;
@@ -25,6 +26,14 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateResume(Resume resume){
             return Ok(await Mediator.Send(new Create.Command{Resume = resume}));
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> EditResume(Guid id, Resume resume){
+
+            resume.Id = id;
+
+            return Ok(await Mediator.Send(new Edit.Command{Resume = resume}));
         }
     }
 }

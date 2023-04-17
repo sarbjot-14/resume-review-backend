@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "T4sjUgHCaRQ+b9iHJQZ0YFMQezHzPPXzfTY/IeU4G1RmBwYl3GEKBKpxSBIUEZLUZPZhmxnzcbZHNWK91kouZQ==",
+  "dgSpecHash": "+GHZKcnC3JWetFBM2AcCxl31UHOFgqxX7P+nbJ2T735roz7HxMeoqjm0F5qyGs/vTwMwSknjRaCNdfVGwfF/HQ==",
   "success": true,
   "projectFilePath": "/Users/sarbjot/Projects/Random/ResumeReviewBackend/Application/Application.csproj",
   "expectedPackageFiles": [
+    "/Users/sarbjot/.nuget/packages/mediatr/11.0.0/mediatr.11.0.0.nupkg.sha512",
+    "/Users/sarbjot/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
+    "/Users/sarbjot/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.1.0/mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/microsoft.data.sqlite.core/7.0.5/microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/microsoft.entityframeworkcore/7.0.5/microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.5/microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
