@@ -1,4 +1,6 @@
 
+using Application.Resumes;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -18,6 +20,9 @@ builder.Services.AddDbContext<DataContext>(opt=>
 builder.Services.AddCors(opt=> opt.AddPolicy("CorsPolicy", policy=>{
     policy.AllowAnyMethod().AllowAnyHeader().AllowCredentials().WithOrigins("http://localhost:3000");
 }));
+
+builder.Services.AddMediatR(typeof(List.Handler));
+
 var app = builder.Build();
 
 app.UseCors("CorsPolicy");

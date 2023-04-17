@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "/7ggfdqh/Pc+ynvjTKzuV6Sj3N8oA4UkPy0oerqnihuc4M5wtmlRshyk5ijHAZiYN9opknpIq9Pqfyak0CdUvA==",
+  "dgSpecHash": "jBjmNAHw5VZbCCHuXe06Dfr1dDTwWvTo95JCoQ6t1BoI+yb4H14c1tmymK5Q/Prmp7MFX0Ya82tgejVpu9jozQ==",
   "success": true,
   "projectFilePath": "/Users/sarbjot/Projects/Random/ResumeReviewBackend/API/API.csproj",
   "expectedPackageFiles": [
     "/Users/sarbjot/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/sarbjot/.nuget/packages/mediatr/11.0.0/mediatr.11.0.0.nupkg.sha512",
+    "/Users/sarbjot/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
+    "/Users/sarbjot/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.1.0/mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/microsoft.aspnetcore.openapi/7.0.4/microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/microsoft.data.sqlite.core/7.0.5/microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/microsoft.entityframeworkcore/7.0.5/microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
