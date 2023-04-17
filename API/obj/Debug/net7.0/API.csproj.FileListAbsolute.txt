@@ -76,3 +76,5 @@
 /Users/sarbjot/Projects/Random/ResumeReviewBackend/API/bin/Debug/net7.0/MediatR.dll
 /Users/sarbjot/Projects/Random/ResumeReviewBackend/API/bin/Debug/net7.0/MediatR.Contracts.dll
 /Users/sarbjot/Projects/Random/ResumeReviewBackend/API/bin/Debug/net7.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
+/Users/sarbjot/Projects/Random/ResumeReviewBackend/API/bin/Debug/net7.0/AutoMapper.dll
+/Users/sarbjot/Projects/Random/ResumeReviewBackend/API/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

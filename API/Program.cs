@@ -1,4 +1,5 @@
 
+using Application.Core;
 using Application.Resumes;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,7 @@ builder.Services.AddCors(opt=> opt.AddPolicy("CorsPolicy", policy=>{
 }));
 
 builder.Services.AddMediatR(typeof(List.Handler));
-
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 var app = builder.Build();
 
 app.UseCors("CorsPolicy");

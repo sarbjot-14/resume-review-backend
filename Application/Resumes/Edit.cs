@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Net;
+using AutoMapper;
 using Domain;
 using MediatR;
 using Persistence;
@@ -15,8 +16,10 @@ namespace Application.Resumes
         public class Handler : IRequestHandler<Command>
         {
             public DataContext _context { get; }
-            public Handler(DataContext context)
+            private readonly IMapper _mapper ;
+            public Handler(DataContext context, IMapper mapper)
             {
+                _mapper = mapper;
                 _context = context;
             }
 
@@ -24,8 +27,8 @@ namespace Application.Resumes
             {
                var resume = await _context.Resumes.FindAsync(request.Resume.Id);
 
-               resume.Author = request.Resume.Author ?? resume.Author;
-
+               //resume.Author = request.Resume.Author ?? resume.Author;
+                _mapper.Map(request.Resume, resume);
                await _context.SaveChangesAsync();
 
                return Unit.Value;
