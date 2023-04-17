@@ -21,5 +21,10 @@ namespace API.Controllers
         public async Task<ActionResult<Resume>> GetResume(Guid id){
             return await Mediator.Send(new Details.Query{Id = id});
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateResume(Resume resume){
+            return Ok(await Mediator.Send(new Create.Command{Resume = resume}));
+        }
     }
 }
