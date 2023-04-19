@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Ms2esceqg8M9b54UNDEpQdOGOuWSVLa89y2Iz47cHYoCZCVYAnFvjlYUfe3WCved0Lp45R509pujeeUKuA2UIQ==",
+  "dgSpecHash": "w1hBfX4XfJ3rgq9mBhuHL9KSbXiVvXWX/kS9v+Rfla17kRO7acZsIsX5VzkSgc0p3cPHfNJ7J54h0pECK6sLtQ==",
   "success": true,
   "projectFilePath": "/Users/sarbjot/Projects/Random/ResumeReviewBackend/API/API.csproj",
   "expectedPackageFiles": [
     "/Users/sarbjot/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/sarbjot/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
+    "/Users/sarbjot/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/sarbjot/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/mediatr/11.0.0/mediatr.11.0.0.nupkg.sha512",
     "/Users/sarbjot/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",

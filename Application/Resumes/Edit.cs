@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Net;
 using AutoMapper;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Persistence;
 
@@ -11,6 +12,14 @@ namespace Application.Resumes
     {
         public class Command : IRequest{
             public Resume Resume{ get; set;}
+        }
+
+        public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x=> x.Resume).SetValidator(new ResumeValidator());
+            }
         }
 
         public class Handler : IRequestHandler<Command>
