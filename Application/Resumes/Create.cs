@@ -1,4 +1,5 @@
 
+using Application.Core;
 using Domain;
 using FluentValidation;
 using MediatR;
@@ -8,7 +9,7 @@ namespace Application.Resumes
 {
     public class Create : IRequest
     {
-        public class Command : IRequest{
+        public class Command : IRequest<Result<Unit>>{
             public Resume Resume {get;set;}
         }
 
@@ -20,7 +21,7 @@ namespace Application.Resumes
             }
         }
 
-        public class Handler : IRequestHandler<Command>
+        public class Handler : IRequestHandler<Command, Result<Unit>>
         {
             private readonly DataContext _context;
             public Handler(DataContext context)
@@ -28,13 +29,18 @@ namespace Application.Resumes
                 _context = context;
             }
 
-            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
                 _context.Resumes.Add(request.Resume);
 
-                await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync() > 0;
+                
+                if(!result){
+                    return Result<Unit>.Failure("Failed to create resume");
+                }
 
-                return Unit.Value;
+                return Result<Unit>.Success(Unit.Value);
+
             }
         }
     }

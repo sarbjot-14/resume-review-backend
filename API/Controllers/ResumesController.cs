@@ -14,18 +14,19 @@ namespace API.Controllers
        
 
         [HttpGet]
-        public async Task<ActionResult<List<Resume>>> GetResumes(){
-            return await Mediator.Send(new List.Query());
+        public async Task<IActionResult> GetResumes(){
+            return HandleResult(await Mediator.Send(new List.Query()));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Resume>> GetResume(Guid id){
-            return await Mediator.Send(new Details.Query{Id = id});
+        public async Task<IActionResult> GetResume(Guid id){
+        
+            return HandleResult(await Mediator.Send(new Details.Query{Id = id}));
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateResume(Resume resume){
-            return Ok(await Mediator.Send(new Create.Command{Resume = resume}));
+            return HandleResult(await Mediator.Send(new Create.Command{Resume = resume}));
         }
 
         [HttpPut("{id}")]
@@ -33,12 +34,14 @@ namespace API.Controllers
 
             resume.Id = id;
 
-            return Ok(await Mediator.Send(new Edit.Command{Resume = resume}));
+            return HandleResult(await Mediator.Send(new Edit.Command{Resume = resume}));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteResume(Guid id){
-            return Ok(await Mediator.Send(new Delete.Command{Id = id}));
+            
+            
+            return HandleResult(await Mediator.Send(new Delete.Command{Id = id}));
         }
     }
 }

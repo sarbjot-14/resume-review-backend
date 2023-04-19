@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Net;
+using Application.Core;
 using AutoMapper;
 using Domain;
 using FluentValidation;
@@ -10,7 +11,7 @@ namespace Application.Resumes
 {
     public class Edit
     {
-        public class Command : IRequest{
+        public class Command : IRequest<Result<Unit>>{
             public Resume Resume{ get; set;}
         }
 
@@ -22,7 +23,7 @@ namespace Application.Resumes
             }
         }
 
-        public class Handler : IRequestHandler<Command>
+        public class Handler : IRequestHandler<Command, Result<Unit>>
         {
             public DataContext _context { get; }
             private readonly IMapper _mapper ;
@@ -32,15 +33,19 @@ namespace Application.Resumes
                 _context = context;
             }
 
-            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
                var resume = await _context.Resumes.FindAsync(request.Resume.Id);
+                if (resume == null) return null;
 
-               //resume.Author = request.Resume.Author ?? resume.Author;
                 _mapper.Map(request.Resume, resume);
-               await _context.SaveChangesAsync();
 
-               return Unit.Value;
+                var result = await _context.SaveChangesAsync() > 0;
+
+                if(!result){
+                    return Result<Unit>.Failure("Failed to update activity");
+                }
+               return Result<Unit>.Success(Unit.Value);
             }
         }
     }
