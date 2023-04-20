@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using API.Extensions;
+using API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseCors("CorsPolicy");
 // Configure the HTTP request pipeline.
