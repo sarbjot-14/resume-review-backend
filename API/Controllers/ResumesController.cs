@@ -12,7 +12,7 @@ namespace API.Controllers
     public class ResumesController :BaseApiController
     {
        
-
+        
         [HttpGet]
         public async Task<IActionResult> GetResumes(){
             return HandleResult(await Mediator.Send(new List.Query()));
