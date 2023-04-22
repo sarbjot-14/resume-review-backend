@@ -20,7 +20,6 @@ Web app to allow users to upload resumes and get feedback in order to make impro
 6. Used Asp.Net Core Identity to manage authentication. 
 7. Created data validation using FluentValidation nuget package
 8. Generate Jason Web Token (JWT) with System.IdentityModel.Tokens. Jwt nuget package.
-9. 
 
 
 ## How to run
